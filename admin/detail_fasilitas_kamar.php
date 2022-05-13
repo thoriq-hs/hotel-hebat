@@ -4,7 +4,7 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
 // ambil data di URL
 $id = $_GET["id"];
 // query data berdasarkan id
-$Detailfasilitas_kamar = mysqli_query($conn, "SELECT * FROM fasilitas_kamar WHERE id = $id");
+$Detailfasilitas_kamar = mysqli_query($conn, "SELECT * FROM fasilitas_kamar,kamar where fasilitas_kamar.id_kamar=kamar.id_kamar");
 // ambil baris dari query
 $Resultdetail_fasilitas_kamar = mysqli_fetch_assoc($Detailfasilitas_kamar);
 ?>
@@ -38,6 +38,10 @@ $Resultdetail_fasilitas_kamar = mysqli_fetch_assoc($Detailfasilitas_kamar);
     <table class="table table-striped" style="width:100%">
       <tbody>
         <tr>
+        <td>
+            <h4>Nama kamar: </h3>
+              <h5><?= $Resultdetail_fasilitas_kamar['nama_kamar']; ?></h5>
+          </td>
           <td>
             <h4>Nama Fasilitas kamar: </h3>
               <h5><?= $Resultdetail_fasilitas_kamar['fasilitas']; ?></h5>

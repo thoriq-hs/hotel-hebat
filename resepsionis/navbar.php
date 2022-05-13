@@ -7,9 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="./kamar.php">Kamar</a>
-          <a class="nav-link" href="./fasilitas_kamar.php">Fasilitas Kamar</a>
-          <a class="nav-link" href="./fasilitas_umum.php">Fasilitas Umum</a>
+          <a class="nav-link" href="./pelanggan.php">Pelanggan</a>
           <a href="../logout.php" class="btn btn-outline-light">Logout</a>
         </div>
       </div>
