@@ -42,6 +42,15 @@ if ($_SESSION['role'] != "Resepsionis") {
   ?>
   <!-- Navbar -->
 
+<!-- Tombol filter tanggal -->
+<form method="get">
+			<label>-----PILIH TANGGAL</label>
+			<input type="date" name="tanggal">
+			<input type="submit" value="FILTER">
+		</form>
+
+<!-- Akhr filter -->
+
   <!-- Tampil -->
   <div class="container-fluid card-body">
     <table id="pelanggan" class="table table-striped" style="width:100%">
@@ -57,7 +66,38 @@ if ($_SESSION['role'] != "Resepsionis") {
           <th class="text-center">Aksi</th>
         </tr>
       </thead>
+
+      <?php 
+ 
+			if(isset($_GET['tanggal'])){
+				$tgl = $_GET['tanggal'];
+				$resultPelanggan = mysqli_query($conn,"select * from pelanggan,kamar WHERE checkin='$tgl' AND pelanggan.id_kamar = kamar.id_kamar");
+			}else{
+				$resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
+			}
+			while($rowPelanggan = mysqli_fetch_array($resultPelanggan)){
+        ?>
       <tbody>
+      <tr>
+            <td><span class="badge bg-warning"><?= $rowPelanggan['status']; ?></span></td>
+            <td><?= $rowPelanggan['nama_tamu']; ?></td>
+            <td><?= $rowPelanggan['tgl_pesan']; ?></td>
+            <td><?= $rowPelanggan['checkin']; ?></td>
+            <td><?= $rowPelanggan['checkout']; ?></td>
+            <td><?= $rowPelanggan['nama_kamar']; ?></td>
+            <td><?= $rowPelanggan['jml_kamar']; ?></td>
+            <td>
+              <a href="detail.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Detail</a>
+              <a href="proses.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark mx-1">Proses</a>
+              <a href="hapus.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Hapus</a>
+            </td>
+          </tr>
+      </tbody>
+      <?php  } ?>
+    </table>
+
+
+      <!-- <tbody>
         <?php
         $resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
         ?>
@@ -76,9 +116,11 @@ if ($_SESSION['role'] != "Resepsionis") {
               <a href="hapus.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Hapus</a>
             </td>
           </tr>
+
+
         <?php endwhile; ?>
       </tbody>
-    </table>
+    </table> -->
   </div>
   <!-- Tampil -->
 

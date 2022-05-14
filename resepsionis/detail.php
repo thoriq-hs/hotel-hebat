@@ -67,12 +67,14 @@ $ResultDetailProses = mysqli_fetch_assoc($DetailProses);
   </div>
   <div id="cetakBukti" class="container-fluid">
     <div class="row">
-      <h1 class="card p-2 mb-3 text-center"><?= $ResultDetailProses['status']; ?></h1>
+      <h1 class="card p-1 mb-1 text-center"><?= $ResultDetailProses['status']; ?></h1>
       
-      <div class="col-lg-6">
-        <div class="card p-3">
+      <div class="col-lg-12">
+        <div class="card p-2">
           <h4>Nama pemesan : <?= $ResultDetailProses['nama_pemesan']; ?></h4>
-          <div class="email"><a href="mailto:<?= $ResultDetailProses['email']; ?> "><?= $ResultDetailProses['email']; ?></a></div>
+          <div class="email">Email : <a href="mailto:<?= $ResultDetailProses['email']; ?> "><?= $ResultDetailProses['email']; ?></a></div>
+          <div>No Handphone : <?= $ResultDetailProses['hp']; ?></div>
+          <div>Nama Tamu : <?= $ResultDetailProses['nama_tamu']; ?></div>
           <div>Tipekamar yg dipesan : <?= $ResultDetailProses['nama_kamar']; ?></div>
           <div>Tanggal Pesan : <?= $ResultDetailProses['tgl_pesan']; ?></div>
           <div>Jumlah kamar dipesan : <?= $ResultDetailProses['jml_kamar']; ?></div>
