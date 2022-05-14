@@ -41,62 +41,44 @@ if ($_SESSION['role'] != "Resepsionis") {
   include './navbar.php'
   ?>
   <!-- Navbar -->
-  
-  <div class="form-floating mb-2 mt-3 ">
-     <input type="date" class="form-control" id="tgl"  name="tgl">
-     <label for="tgl">Cari Tanggal</label>
-    </div>
-
 
   <!-- Tampil -->
-  <div class="card container">
-    <div class="table-responsive p-2">
-
-      <table id="pelanggan" class="table table-sm table-striped" style="width:100%">
-        <thead class="bg-dark text-light">
+  <div class="container-fluid card-body">
+    <table id="pelanggan" class="table table-striped" style="width:100%">
+      <thead class="bg-dark text-light">
+        <tr>
+          <th>Status</th>
+          <th>Nama Tamu</th>
+          <th>Tanngal Pesan</th>
+          <th>Check In</th>
+          <th>Check Out</th>
+          <th>Kamar</th>
+          <th>Jumlah Kamar</th>
+          <th class="text-center">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
+        ?>
+        <?php while ($rowPelanggan = mysqli_fetch_assoc($resultPelanggan)) : ?>
           <tr>
-            <th>Nama Pemesan</th>
-            <th>Email</th>
-            <th>Hp</th>
-            <th>Nama Tamu</th>
-            <th>Tanggal Pesan</th>
-            <th>Chekin</th>
-            <th>Chekout</th>
-            <th>Jumlah Kamar</th>
-            <th>Kamar</th>
-            <th>Status</th>
-            <th>Aksi</th>
+            <td><span class="badge bg-warning"><?= $rowPelanggan['status']; ?></span></td>
+            <td><?= $rowPelanggan['nama_tamu']; ?></td>
+            <td><?= $rowPelanggan['tgl_pesan']; ?></td>
+            <td><?= $rowPelanggan['checkin']; ?></td>
+            <td><?= $rowPelanggan['checkout']; ?></td>
+            <td><?= $rowPelanggan['nama_kamar']; ?></td>
+            <td><?= $rowPelanggan['jml_kamar']; ?></td>
+            <td>
+              <a href="detail.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Detail</a>
+              <a href="proses.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark mx-1">Proses</a>
+              <a href="hapus.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Hapus</a>
+            </td>
           </tr>
-        </thead>
-
-        <tbody>
-          <?php
-          $resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
-          ?>
-          <?php while ($rowPelanggan = mysqli_fetch_assoc($resultPelanggan)) : ?>
-            <tr>
-              <td><?= $rowPelanggan['nama_pemesan']; ?></td>
-              <td><?= $rowPelanggan['email']; ?></td>
-              <td><?= $rowPelanggan['hp']; ?></td>
-              <td><?= $rowPelanggan['nama_tamu']; ?></td>
-              <td><?= $rowPelanggan['tgl_pesan']; ?></td>
-              <td><?= $rowPelanggan['checkin']; ?></td>
-              <td><?= $rowPelanggan['checkout']; ?></td>
-              <td><?= $rowPelanggan['jml_kamar']; ?></td>
-              <td><?= $rowPelanggan['nama_kamar']; ?></td>
-              <td><?= $rowPelanggan['status']; ?></td>
-              <td>
-                <div class="d-flex">
-                  <a href="detail_pelanggan.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Detail</a>
-                  <a href="proses_pelanggan.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark mx-1">Proses</a>
-                </div>
-
-              </td>
-            </tr>
-          <?php endwhile; ?>
-        </tbody>
-      </table>
-    </div>
+        <?php endwhile; ?>
+      </tbody>
+    </table>
   </div>
   <!-- Tampil -->
 
@@ -107,28 +89,6 @@ if ($_SESSION['role'] != "Resepsionis") {
     $(document).ready(function() {
       $('#pelanggan').DataTable();
     });
-
-      // cari tanggal
-      $(document).ready(function(){
-    var tgl = document.getElementById('tgl');     
-        tgl.valueAsDate = new Date();
-        
-        $("#tgl").on("change",function(){
-            tanggal = tgl.value;
-            //console.log(this.value);
-            $.ajax({
-            url: "proses/cari_tanggal.php",
-            method: "POST",
-            data:{tanggal:tanggal},
-              success: function(data)
-              {
-                //alert(data);return;
-                $("#cari_nama").html(data).refresh;
-              }
-            });
-        });
-});
-
   </script>
 
 </body>
