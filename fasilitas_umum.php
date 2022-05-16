@@ -59,6 +59,12 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
     <?php endwhile; ?>
   </div>
 
+  <!-- SCRIPT FOOTER -->
+<div class="mt-5 p-2 bg-secondary text-white text-center">
+  <p>Login Sebagai Petugas?</p>
+  <a href="login.php" class="btn btn-info">Login</a>
+</div>
+
   <!-- Bootstrap JS -->
   <script src="./vendor/bootstrap.bundle.min.js"></script>
 
