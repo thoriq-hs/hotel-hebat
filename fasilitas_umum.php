@@ -45,7 +45,7 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
         <div class="card">
           <h5><?= $rowFasilitasUmum['nama_fasilitas']; ?></h5>
           <p><?= $rowFasilitasUmum['keterangan']; ?></p>
-          <img class="img-fluid" max-width: 100%; height: auto; src="./vendor/img/fasilitas_umum/<?= $rowFasilitasUmum['gambar']; ?>" alt="Gambar" style="width: 500px; height: 300px;">
+          <img class="img-fluid" max-width: 100%; height: auto; src="./vendor/img/fasilitas_umum/<?= $rowFasilitasUmum['gambar']; ?>" alt="Gambar" >
         </div>
       </div>
     <?php endwhile; ?>

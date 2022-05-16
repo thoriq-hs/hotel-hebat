@@ -49,7 +49,7 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
           <ul>
             <li><?= $rowFasilitasKamar['fasilitas']; ?></li>
           </ul>
-          <img class="img-fluid" src="./vendor/img/fasilitas_kamar/<?= $rowFasilitasKamar['gambar']; ?>" alt="Card image" style="width: 300px; height: 150px;">
+          <img class="img-fluid" src="./vendor/img/fasilitas_kamar/<?= $rowFasilitasKamar['gambar']; ?>" alt="Card image">
         </div>
       <?php endwhile; ?>
     </div>

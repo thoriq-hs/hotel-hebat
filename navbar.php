@@ -9,7 +9,6 @@
         <div class="navbar-nav">
           <a class="nav-link" href="./index.php">Home</a>
           <a class="nav-link" href="./kamar.php">Kamar</a>
-          <a class="nav-link" href="./fasilitas_kamar.php">Fasilitas Kamar</a>
           <a class="nav-link" href="./fasilitas_umum.php">Fasilitas Umum</a>
           <a href="pesan.php" class="btn btn-outline-light">Pesan</a>
         </div>
