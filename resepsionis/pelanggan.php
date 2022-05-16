@@ -58,7 +58,7 @@ if ($_SESSION['role'] != "Resepsionis") {
         <tr>
           <th>Status</th>
           <th>Nama Tamu</th>
-          <th>Tanngal Pesan</th>
+          <th>Tanggal Pesan</th>
           <th>Check In</th>
           <th>Check Out</th>
           <th>Kamar</th>
@@ -97,30 +97,6 @@ if ($_SESSION['role'] != "Resepsionis") {
     </table>
 
 
-      <!-- <tbody>
-        <?php
-        $resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
-        ?>
-        <?php while ($rowPelanggan = mysqli_fetch_assoc($resultPelanggan)) : ?>
-          <tr>
-            <td><span class="badge bg-warning"><?= $rowPelanggan['status']; ?></span></td>
-            <td><?= $rowPelanggan['nama_tamu']; ?></td>
-            <td><?= $rowPelanggan['tgl_pesan']; ?></td>
-            <td><?= $rowPelanggan['checkin']; ?></td>
-            <td><?= $rowPelanggan['checkout']; ?></td>
-            <td><?= $rowPelanggan['nama_kamar']; ?></td>
-            <td><?= $rowPelanggan['jml_kamar']; ?></td>
-            <td>
-              <a href="detail.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Detail</a>
-              <a href="proses.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark mx-1">Proses</a>
-              <a href="hapus.php?id=<?= $rowPelanggan['id']; ?>" class="btn btn-outline-dark">Hapus</a>
-            </td>
-          </tr>
-
-
-        <?php endwhile; ?>
-      </tbody>
-    </table> -->
   </div>
   <!-- Tampil -->
 

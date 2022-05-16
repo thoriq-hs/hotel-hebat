@@ -13,6 +13,14 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
   <!-- CSS Bootstrap -->
   <link rel="stylesheet" href="./vendor/bootstrap.min.css">
   <title>Fasilitas Umum</title>
+
+  <!-- Vendor CSS File -->
+  <link href="./temp/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./temp/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="./temp/vendor/animate/animate.min.css" rel="stylesheet">
+        <link href="./temp/vendor/slick/slick.css" rel="stylesheet">
+        <link href="./temp/vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
 </head>
 
 <body style="margin-top: 80px;">

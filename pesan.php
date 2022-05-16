@@ -46,12 +46,9 @@ $jumlah = 0;
         <link href="./temp/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="./temp/vendor/animate/animate.min.css" rel="stylesheet">
         <link href="./temp/vendor/slick/slick.css" rel="stylesheet">
-        <link href="./temp/vendor/slick/slick-theme.css" rel="stylesheet">
         <link href="./temp/vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
         <!-- Main Stylesheet File -->
-        <link href="./temp/css/hover-style.css" rel="stylesheet">
-        <link href="./temp/css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -64,7 +61,7 @@ $jumlah = 0;
         <!-- Header Section End -->
     
     <br>
-    <center><font size="10">HOTEL HEBAT</font></center>
+    <center><font size="1">HOTEL HEBAT</font></center>
     <br>
 
 
@@ -133,11 +130,17 @@ $jumlah = 0;
             
             <option value="">-- Pilih Tipe Kamar  --</option>
             <?php
-                $sql = $conn -> query("select * from kamar order by id_kamar");
-                while ($data=$sql->fetch_assoc()) {
-                echo "<option value='$data[id_kamar]'>$data[id_kamar]</option>";
-                }
-            ?>
+                    $sql = "SELECT * FROM kamar";
+                    $result = $conn->query($sql);
+                      if ($result->num_rows > 0) {
+                      //membaca data pada baris tabel
+                      while($row = $result->fetch_assoc()) {
+                  ?>
+                        <option value="<?php echo $row["id_kamar"]; ?>"> <?php echo $row["nama_kamar"]; ?> </option>                 
+                  <?php 
+                    }
+                   }
+                  ?>
             </select>
             </div>
         </div>
