@@ -78,7 +78,8 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
       </div>
 
       <!-- Tombol Tambah -->
-      <button class="btn btn-success" type="submit" name="tambah_kamar">Tambah</button>
+      <button class="btn btn-primary" type="submit" name="tambah_kamar">Tambah</button>
+      <a href="kamar.php" class="btn btn-warning">Kembali</a>
 
     </form>
   </div>

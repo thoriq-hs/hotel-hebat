@@ -57,6 +57,7 @@ if ($_SESSION['role'] != "Resepsionis") {
       <thead class="bg-dark text-light">
         <tr>
           <th>Status</th>
+          <th>No Pendaftaran</th> 
           <th>Nama Tamu</th>
           <th>Tanggal Pesan</th>
           <th>Check In</th>
@@ -72,14 +73,18 @@ if ($_SESSION['role'] != "Resepsionis") {
 			if(isset($_GET['tanggal'])){
 				$tgl = $_GET['tanggal'];
 				$resultPelanggan = mysqli_query($conn,"select * from pelanggan,kamar WHERE checkin='$tgl' AND pelanggan.id_kamar = kamar.id_kamar");
-			}else{
-				$resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
-			}
+			}elseif(isset($_GET['nama_tamu'])){
+        $nm = $_GET['nama_tamu'];
+        $resultPelanggan = mysqli_query($conn, "select * from pelanggan,kamar WHERE nama_tamu='$nm' AND pelanggan.id_kamar = kamar.id_kamar");
+      }else{
+        $resultPelanggan = mysqli_query($conn, "SELECT * FROM pelanggan,kamar WHERE pelanggan.id_kamar = kamar.id_kamar");
+      }
 			while($rowPelanggan = mysqli_fetch_array($resultPelanggan)){
         ?>
       <tbody>
       <tr>
             <td><span class="badge bg-warning"><?= $rowPelanggan['status']; ?></span></td>
+            <td><?= $rowPelanggan['no_reg']; ?></td>
             <td><?= $rowPelanggan['nama_tamu']; ?></td>
             <td><?= $rowPelanggan['tgl_pesan']; ?></td>
             <td><?= $rowPelanggan['checkin']; ?></td>

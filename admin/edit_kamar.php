@@ -83,7 +83,8 @@ $ResultDetailKamar = mysqli_fetch_assoc($DetailKamar);
       </div>
 
       <!-- Tombol Edit -->
-      <button class="btn btn-warning" type="submit" name="edit_kamar">Edit</button>
+      <button class="btn btn-primary" type="submit" name="edit_kamar">Edit</button>
+      <a href="kamar.php" class="btn btn-warning">Kembali</a>
 
     </form>
   </div>

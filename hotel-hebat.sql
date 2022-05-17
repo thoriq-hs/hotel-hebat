@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 10:13 AM
+-- Generation Time: May 17, 2022 at 07:27 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -41,7 +41,9 @@ CREATE TABLE `fasilitas_kamar` (
 INSERT INTO `fasilitas_kamar` (`id`, `id_kamar`, `fasilitas`, `gambar`) VALUES
 (31, 34, 'AC Pendingin Ruang', '627dbc0064b40.jpg'),
 (38, 1, 'Wifi', '627dbc3a08cb7.jpg'),
-(39, 1, 'PS 5', '627dbc91deb5e.jpg');
+(39, 1, 'PS 5', '627dbc91deb5e.jpg'),
+(41, 1, 'TV LED 32 inch', '628322075c586.jpg'),
+(42, 34, 'Set Handuk', '628322aea703f.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,8 +64,8 @@ CREATE TABLE `fasilitas_umum` (
 
 INSERT INTO `fasilitas_umum` (`id`, `nama_fasilitas`, `keterangan`, `gambar`) VALUES
 (13, 'Kolam renang', 'Kolam renang anak-anak dan dewasa', '627e7464aac1f.jpg'),
-(14, 'LapanganBadminton', 'Bermain bersama', '627e7b22099ee.jpg'),
-(15, 'TempatSantai', 'Menikmati suasana hotel', '627e7b31f18ee.png'),
+(14, 'Lapangan Badminton', 'Bermain bersama teman dan keluarga.', '627e7b22099ee.jpg'),
+(15, 'TempatSantai', 'Bersantai dan menikmati suasana hotel', '627e7b31f18ee.png'),
 (16, 'GYM', 'Buka Jam 7 pagi hingga jam 11 siang', '627e7b7394165.jpg');
 
 -- --------------------------------------------------------
@@ -112,12 +114,12 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id`, `no_reg`, `nama_pemesan`, `email`, `hp`, `nama_tamu`, `tgl_pesan`, `checkin`, `checkout`, `jml_kamar`, `status`, `id_kamar`) VALUES
-(17, '', 'Fajri', 'fajri@gmail.com', '08524455', 'amji', '2022-05-11 14:13:08', '2022-05-13', '2022-05-19', 2, 'Sedang Diproses', 34),
-(18, '', 'gg', 'muhammadfebrian683@gmail.com', '00', 'yelllo', '2022-05-15 00:00:00', '2022-05-15', '2022-05-17', 3, 'Telah Diproses', 1),
-(22, '', 'red', 'muhammadfebrian683@gmail.com', '00', 'red', '2022-05-15 00:00:00', '2022-05-15', '2022-05-16', 2, 'Sedang Diproses', 1),
-(27, '', 'REG-0522001', 'red', 'muhammadfebr', '00', '2022-05-15 00:00:00', '2022-05-15', '2022-05-17', 2, 'Sedang Diproses', 1),
-(28, 'REG-0522001', 'red', 'muhammadfebrian683@gmail.com', '00', 'red', '2022-05-16 00:00:00', '2022-05-16', '2022-05-17', 3, 'Sedang Diproses', 1),
-(29, 'REG-0522002', 'gg', 'muhammadfebrian683@gmail.com', '00', 'red', '2013-11-10 00:00:00', '2013-02-11', '2013-02-12', 2, 'Sedang Diproses', 1);
+(17, 'REG-0522002', 'Fajri', 'fajri@gmail.com', '08524455', 'Muhammad Fajri', '2022-05-11 14:13:08', '2022-05-13', '2022-05-19', 2, 'Sedang Diproses', 34),
+(18, 'REG-0522003', 'Deni', 'deniirawan683@gmail.com', '085316778388', 'Deni Irawan', '2022-05-15 00:00:00', '2022-05-15', '2022-05-17', 3, 'Telah Diproses', 1),
+(30, 'REG-0522001', 'Azkiya', 'azkiya@gmail.com', '081233768801', 'Azkiya Alfiandri', '2022-05-17 00:00:00', '2022-05-17', '2022-05-18', 3, 'Sedang Diproses', 34),
+(31, 'REG-0522004', 'Rian', 'muhammadfebrian683@gmail.com', '085316778388', 'Muhammad Febrian', '2022-05-16 00:00:00', '2022-05-16', '2022-05-17', 2, 'Sedang Diproses', 1),
+(32, 'REG-0522005', 'Rhea', 'rhea@gmail.co', '081233768801', 'Rhea Havilah G.', '2022-05-17 00:00:00', '2022-05-18', '2022-05-19', 3, 'Sedang Diproses', 34),
+(33, 'REG-0522006', 'teno', 'teno@gmail.com', '081233768801', 'teno', '2022-05-17 00:00:00', '2022-05-17', '2022-05-18', 2, 'Sedang Diproses', 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +189,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `fasilitas_kamar`
 --
 ALTER TABLE `fasilitas_kamar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `fasilitas_umum`
@@ -205,7 +207,7 @@ ALTER TABLE `kamar`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables

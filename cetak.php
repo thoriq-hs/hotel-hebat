@@ -16,6 +16,8 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
        $sql2 = mysqli_query($conn, "SELECT pelanggan.*, kamar.id_kamar AS nama_kamar FROM pelanggan LEFT JOIN kamar ON pelanggan.id_kamar = kamar.id_kamar WHERE no_reg='$no_reg'");     
       $tampil = mysqli_fetch_assoc($sql2);
     ?>
+      <a href="index.php" class="btn btn-warning">Home</a>
+
       <section class="content">
         <div class="row">
             <div>

@@ -171,7 +171,8 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
       </div>
 
       <!-- Tombol Edit -->
-      <button class="btn btn-warning" type="submit" name="fasilitas_kamar">Edit</button>
+      <button class="btn btn-primary" type="submit" name="fasilitas_kamar">Edit</button>
+      <a href="fasilitas_kamar.php" class="btn btn-warning">Kembali</a>
 
     </form>
   </div>

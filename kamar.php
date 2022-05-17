@@ -53,7 +53,7 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
       ?>
       <?php while ($rowFasilitasKamar = mysqli_fetch_assoc($resultFasilitasKamar)) : ?>
         <div class="card mt-2 mb-4">
-          <h5 class="card-title"><?= $rowFasilitasKamar['nama_kamar']; ?> :</h5>
+          <h5 class="card-title">Tipe Kamar: <?= $rowFasilitasKamar['nama_kamar']; ?> </h5>
           <ul>
             <li><?= $rowFasilitasKamar['fasilitas']; ?></li>
           </ul>

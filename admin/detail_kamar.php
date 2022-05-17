@@ -51,6 +51,17 @@ $ResultDetailKamar = mysqli_fetch_assoc($DetailKamar);
   </div>
   <!-- Detail Kamar -->
 
+  <!-- SCRIPT TOMBOL KEMBALI  -->
+  <div class="container mt-2">
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col-sm form-floating mb-3 mt-4">
+          <a href="kamar.php" class="btn btn-warning">Kembali</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="../vendor/bootstrap.bundle.min.js"></script>
   <!-- Data Tabel -->

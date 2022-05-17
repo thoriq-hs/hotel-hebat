@@ -118,6 +118,7 @@ if (isset($_POST["login"])) {
             <label for="remember">Ingat saya</label>
           </div>
           <button type="submit" name="login" id="proses_login" class="btn btn-primary">Login</button>
+          <a href="index.php" class="btn btn-warning">Home</a>
         </form>
       </div>
     </div>

@@ -72,6 +72,7 @@ $ResultDetailProses = mysqli_fetch_assoc($DetailProses);
       <div class="col-lg-12">
         <div class="card p-2">
           <h4>Nama pemesan : <?= $ResultDetailProses['nama_pemesan']; ?></h4>
+          <div>No Pendaftaran : <?= $ResultDetailProses['no_reg']; ?></div>
           <div class="email">Email : <a href="mailto:<?= $ResultDetailProses['email']; ?> "><?= $ResultDetailProses['email']; ?></a></div>
           <div>No Handphone : <?= $ResultDetailProses['hp']; ?></div>
           <div>Nama Tamu : <?= $ResultDetailProses['nama_tamu']; ?></div>

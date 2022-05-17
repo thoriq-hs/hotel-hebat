@@ -50,22 +50,22 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
     <div class="carousel-item active">
       <img src="./vendor/img/fasilitas_umum/627e7464aac1f.jpg" alt="Los Angeles" class="d-block" style="width: 100%; height: 500px;">
       <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>We had such a great time in LA!</p>
+        <h3>Kolam Renang</h3>
+        <p>Kolam renang anak-anak dan dewasa!</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./vendor/img/fasilitas_umum/627e7b22099ee.jpg" alt="Chicago" class="d-block" style="width: 100%; height: 500px;">
       <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
+        <h3>Lapangan Badminton</h3>
+        <p>Bermain bersama teman dan keluarga.</p>
       </div> 
     </div>
     <div class="carousel-item">
       <img src="./vendor/img/fasilitas_umum/627e7b7394165.jpg" alt="New York" class="d-block" style="width: 100%; height: 500px;">
       <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
+        <h3>GYM</h3>
+        <p>Buka Jam 7 pagi hingga jam 11 siang!</p>
       </div>  
     </div>
   </div>
@@ -102,9 +102,45 @@ $conn = mysqli_connect("localhost", "root", "", "hotel-hebat");
           </p>
         </div>
       </div>
-
     </div>
   </div>
+
+  <!-- SCRIPT FASILITAS -->
+
+  <div class="container-fluid mt-3">
+  <h1>Fasilitas Hotel Kami</h1>
+  <p></p>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img src="./vendor/img/fasilitas_umum/627e7b7394165.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">GYM</h5>
+          <p class="card-text">Buka Jam 7 pagi hingga jam 11 siang!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img src="./vendor/img/fasilitas_umum/627e7464aac1f.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Kolam Renang</h5>
+          <p class="card-text">Kolam renang anak-anak dan dewasa!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img src="./vendor/img/fasilitas_umum/627e7b22099ee.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">GYM</h5>
+          <p class="card-text">Bermain bersama teman dan keluarga.</p>
+        </div>
+      </div>
+    </div>
 
   <!-- SCRIPT FOOTER -->
 <div class="mt-5 p-2 bg-secondary text-white text-center">
